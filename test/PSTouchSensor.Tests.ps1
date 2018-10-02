@@ -11,6 +11,6 @@ Describe 'Module Manifest Tests' {
 
 Describe 'Get-PSTouchSensorValue' {
     It 'Can get the value of the TouchSensor' {
-        (Get-PSTouchSensorValue).Value | Should -Be $true
+        (Get-PSTouchSensorValue).Value | Should -BeTrue
     }
 }
