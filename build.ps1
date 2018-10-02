@@ -13,7 +13,6 @@ param(
 # Bootstrap step
 if ($Bootstrap.IsPresent) {
     Write-Log "Validate and install missing prerequisits for building ..."
-    Install-Dotnet
 
     # Dependency of PSTouchSensor
     if (-not (Get-Module -Name Microsoft.PowerShell.IoT -ListAvailable)) {
