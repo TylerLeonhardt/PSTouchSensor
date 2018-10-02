@@ -30,6 +30,6 @@ if($Test.IsPresent) {
         throw "Cannot find the 'Pester' module. Please specify '-Bootstrap' to install build dependencies."
     }
 
-    $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru
+    $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile "TEST-PSTouchSensor.xml" -PassThru
     if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
 }
