@@ -30,9 +30,9 @@ function Get-PSTouchSensorValue {
         $pinId = 7
     }
 
-    if (!$env:SUDO_UID) {
-        throw "You must be running PowerShell with 'sudo' to use this module."
-    }
+    # if (!$env:SUDO_UID) {
+    #     throw "You must be running PowerShell with 'sudo' to use this module."
+    # }
 
     return @{
         Value = Get-GpioPin -Id $pinId
