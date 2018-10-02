@@ -36,9 +36,11 @@ if($Test.IsPresent) {
         if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
     } elseif ($env:TF_BUILD) {
         $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru
+        [System.Environment]::GetEnvironmentVariables()
         Write-Host "THIS IS EXECUTING"
         if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
     } else {
+        [System.Environment]::GetEnvironmentVariables()
         Invoke-Pester "$PSScriptRoot/test"
     }
 }
