@@ -30,17 +30,11 @@ if($Test.IsPresent) {
         throw "Cannot find the 'Pester' module. Please specify '-Bootstrap' to install build dependencies."
     }
 
-    if($env:APPVEYOR) {
-        $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru
-        (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestsResults.xml))
-        if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
-    } elseif ($env:TF_BUILD) {
+    if ($env:TF_BUILD) {
         $res = Invoke-Pester "$PSScriptRoot/test" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru
         [System.Environment]::GetEnvironmentVariables()
-        Write-Host "THIS IS EXECUTING"
         if ($res.FailedCount -gt 0) { throw "$($res.FailedCount) tests failed." }
     } else {
-        [System.Environment]::GetEnvironmentVariables()
         Invoke-Pester "$PSScriptRoot/test"
     }
 }
