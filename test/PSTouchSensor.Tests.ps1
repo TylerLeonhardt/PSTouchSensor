@@ -1,5 +1,6 @@
 $ModuleManifestName = 'PSTouchSensor.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
+Import-Module $ModuleManifestPath
 
 Describe 'Module Manifest Tests' {
     It 'Passes Test-ModuleManifest' {
