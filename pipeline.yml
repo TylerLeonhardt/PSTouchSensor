@@ -1,0 +1,5 @@
+queue:
+  name: RaspberryPis
+steps:
+- powershell: './build.ps1 -Bootstrap -Test'
+  displayName: 'CI'
