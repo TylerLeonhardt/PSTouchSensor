@@ -1,9 +1,6 @@
 [CmdletBinding()]
 param(
     [switch]
-    $Clean,
-
-    [switch]
     $Bootstrap,
 
     [switch]
@@ -12,26 +9,19 @@ param(
 
 # Bootstrap step
 if ($Bootstrap.IsPresent) {
-    Write-Log "Validate and install missing prerequisits for building ..."
+    Write-Host "Validate and install missing prerequisits for building ..."
 
     # Dependency of PSTouchSensor
     if (-not (Get-Module -Name Microsoft.PowerShell.IoT -ListAvailable)) {
-        Write-Log -Warning "Module 'PSDepend' is missing. Installing 'PSDepend' ..."
+        Write-Warning "Module 'PSDepend' is missing. Installing 'PSDepend' ..."
         Install-Module -Name Microsoft.PowerShell.IoT -Scope CurrentUser -Force
     }
 
     # For testing
     if (-not (Get-Module -Name Pester -ListAvailable)) {
-        Write-Log -Warning "Module 'Pester' is missing. Installing 'Pester' ..."
+        Write-Warning "Module 'Pester' is missing. Installing 'Pester' ..."
         Install-Module -Name Pester -Scope CurrentUser -Force
     }
-}
-
-# Clean step
-if($Clean.IsPresent) {
-    Push-Location $PSScriptRoot
-    git clean -fdx
-    Pop-Location
 }
 
 # Test step
