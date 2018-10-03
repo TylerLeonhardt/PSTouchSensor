@@ -3,3 +3,7 @@ queue:
 steps:
 - powershell: 'sudo pwsh -NoLogo -NonInteractive -NoProfile -c "./build.ps1 -Bootstrap -Test"'
   displayName: 'CI'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: 'TestResults.xml'
