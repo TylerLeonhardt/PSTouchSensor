@@ -2,7 +2,7 @@ queue:
   name: RaspberryPis
 steps:
 - powershell: '$env:TF_BUILD'
-- powershell: 'sudo pwsh -NoLogo -NonInteractive -NoProfile -c "./build.ps1 -Bootstrap -Test"'
+- powershell: 'sudo -E pwsh -NoLogo -NonInteractive -NoProfile -c "./build.ps1 -Bootstrap -Test"'
   displayName: 'CI'
 - task: PublishTestResults@2
   inputs:
