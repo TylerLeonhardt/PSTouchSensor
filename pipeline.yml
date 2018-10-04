@@ -1,7 +1,7 @@
 queue:
   name: RaspberryPis
 steps:
-- powershell: printenv|sort
+- powershell: '$env:TF_BUILD'
 - powershell: 'sudo pwsh -NoLogo -NonInteractive -NoProfile -c "./build.ps1 -Bootstrap -Test"'
   displayName: 'CI'
 - task: PublishTestResults@2
