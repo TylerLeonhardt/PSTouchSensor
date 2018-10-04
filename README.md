@@ -1,6 +1,6 @@
 # PSTouchSensor
 
-
+[![Build Status](https://mtntop.visualstudio.com/PowerShell-IoT-Projects/_apis/build/status/PowerShell-IoT-Projects-CI%20(1))](https://mtntop.visualstudio.com/PowerShell-IoT-Projects/_build/latest?definitionId=3)
 
 A tiny PowerShell module that streamlines interacting with touch sensors like this:
 
