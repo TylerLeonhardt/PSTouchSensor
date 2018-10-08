@@ -13,7 +13,7 @@ if ($Bootstrap.IsPresent) {
 
     # Dependency of PSTouchSensor
     if (-not (Get-Module -Name Microsoft.PowerShell.IoT -ListAvailable)) {
-        Write-Warning "Module 'PSDepend' is missing. Installing 'PSDepend' ..."
+        Write-Warning "Module 'Microsoft.PowerShell.IoT' is missing. Installing 'Microsoft.PowerShell.IoT' ..."
         Install-Module -Name Microsoft.PowerShell.IoT -Scope CurrentUser -Force
     }
 
