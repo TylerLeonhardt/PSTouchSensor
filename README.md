@@ -6,6 +6,8 @@ A tiny PowerShell module that streamlines interacting with touch sensors like th
 
 ![](https://i.pinimg.com/736x/df/02/f3/df02f33564dfe9aa990698bbe86e4aed--arduino-jog.jpg)
 
+This project is built on top of [PowerShell IoT](https://github.com/powershell-iot) in order to interact with the sensor.
+
 This was originally made for [PSConf Asia 2018](http://psconf.asia/) as a part of my talk "PowerShell IoT: A new frontier for PowerShell".
 
 ## Useful Links
