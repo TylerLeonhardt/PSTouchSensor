@@ -2,14 +2,8 @@ $ModuleManifestName = 'PSTouchSensor.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
 Import-Module $ModuleManifestPath
 
-Describe 'Module Manifest Tests' {
-    It 'Passes Test-ModuleManifest' {
-        Test-ModuleManifest -Path $ModuleManifestPath | Should Not BeNullOrEmpty
-        $? | Should Be $true
-    }
-}
-
 Describe 'Get-PSTouchSensorValue' {
+    # This test will only pass if something is touching the sensor
     It 'Can get the value of the TouchSensor' {
         (Get-PSTouchSensorValue).Value | Should -BeTrue
     }

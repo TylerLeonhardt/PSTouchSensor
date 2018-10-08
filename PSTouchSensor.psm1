@@ -1,5 +1,3 @@
-#Requires -Modules Microsoft.PowerShell.IoT
-
 <#
 .SYNOPSIS
 Gets the value of the Touch Sensor

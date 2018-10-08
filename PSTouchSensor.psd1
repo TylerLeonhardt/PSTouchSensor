@@ -15,19 +15,19 @@ RootModule = 'PSTouchSensor.psm1'
 ModuleVersion = '0.0.1'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @( 'Core' )
 
 # ID used to uniquely identify this module
 GUID = '4dfd621d-c96c-4d55-95a2-5a0cb22d2729'
 
 # Author of this module
-Author = 'tyler'
+Author = 'tylerleonhardt'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+CompanyName = 'tylerleonhardt'
 
 # Copyright statement for this module
-Copyright = '(c) tyler. All rights reserved.'
+Copyright = '(c) tylerleonhardt. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = ''
@@ -51,7 +51,7 @@ Copyright = '(c) tyler. All rights reserved.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @( 'Microsoft.PowerShell.IoT' )
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -72,13 +72,13 @@ Copyright = '(c) tyler. All rights reserved.'
 FunctionsToExport = 'Get-PSTouchSensorValue'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = @()
 
 # Variables to export from this module
-VariablesToExport = '*'
+VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -120,5 +120,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
-
