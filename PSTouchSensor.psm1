@@ -19,28 +19,14 @@ You must be running PowerShell with Sudo
 function Get-PSTouchSensorValue {
     [CmdletBinding()]
     param(
-        [int]$Pin
+        [int]$Pin = 7
     )
-
-    if ($Pin) {
-        $pinId = $Pin
-    } elseif ($global:DefaultPSTouchSensorPin) {
-        $pinId = $global:DefaultPSTouchSensorPin
-    } else {
-        $pinId = 7
-    }
 
     if (!$env:SUDO_UID) {
         throw "You must be running PowerShell with 'sudo' to use this module."
     }
 
-    if ((Get-GpioPin -Id $pinId).Value -eq 'High') {
-        $value = $true
-    } else {
-        $value = $false
-    }
-
-    return @{
-        Value = $value
+    @{
+        Value = (Get-GpioPin -Id $pinId).Value -eq 'High'
     }
 }
