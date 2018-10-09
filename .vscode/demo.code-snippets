@@ -15,9 +15,9 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Set-PSTouchSensorDefaultPin": {
+	"CODE: Set-PSTouchSensorDefaultPin": {
 		"scope": "powershell",
-		"prefix": "Set-PSTouchSensorDefaultPin",
+		"prefix": "CODE_Set-PSTouchSensorDefaultPin",
 		"description": "The code to add in the demo",
 		"body": ["<#",
 			".SYNOPSIS",
