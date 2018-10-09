@@ -45,10 +45,10 @@
 		]
 	},
 
-	"TEST: Set-PSTouchSensorDefaultValue": {
+	"TEST: Set-PSTouchSensorDefaultPin": {
 		"scope": "powershell",
-		"prefix": "TEST_Set-PSTouchSensorDefaultValue",
-		"description": "The test code for Set-PSTouchSensorDefaultValue",
+		"prefix": "TEST_Set-PSTouchSensorDefaultPin",
+		"description": "The test code for Set-PSTouchSensorDefaultPin",
 		"body": ["Context 'Set-PSTouchSensorDefaultPin' {",
 			"    It 'Can set the value of the default pin used' {",
 			"",
