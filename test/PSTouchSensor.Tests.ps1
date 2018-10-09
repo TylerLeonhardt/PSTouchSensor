@@ -1,10 +1,12 @@
-$ModuleManifestName = 'PSTouchSensor.psd1'
-$ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
-Import-Module $ModuleManifestPath
+Import-Module "$PSScriptRoot\..\PSTouchSensor.psd1" -Force
 
-Describe 'Get-PSTouchSensor' {
-    # This test will only pass if something is touching the sensor
-    It 'Can get the value of the TouchSensor' {
-        (Get-PSTouchSensor).Value | Should -BeTrue
+$IsRaspberryPi = (uname -a) -contains 'raspberry'
+
+Describe 'PSTouchSensor' {
+    Context "Get-PSTouchSensor" {
+        # This test will only pass if something is touching the sensor
+        It 'Can get the value of the TouchSensor' -Skip:$(!$IsRaspberryPi) {
+            (Get-PSTouchSensor).Value | Should -BeTrue
+        }
     }
 }
