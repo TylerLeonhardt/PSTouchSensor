@@ -14,7 +14,7 @@ Get-PSTouchSensorValue
 .NOTES
 You must be running PowerShell with Sudo
 #>
-function Get-PSTouchSensorValue {
+function Get-PSTouchSensor {
     [CmdletBinding()]
     param(
         [int]$Pin = 7
