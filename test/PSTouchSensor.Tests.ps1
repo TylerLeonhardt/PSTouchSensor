@@ -9,4 +9,16 @@ Describe 'PSTouchSensor' {
             (Get-PSTouchSensor).Value | Should -BeTrue
         }
     }
+
+    Context 'Set-PSTouchSensorDefaultPin' {
+        It 'Can set the value of the default pin used' {
+
+            $m = Get-Module PSTouchSensor
+
+            # Get internal value of the DEFAULT_PIN
+            & $m { $script:DEFAULT_PIN } | Should -Be 7
+            Set-PSTouchSensorDefaultPin -Pin 8
+            & $m { $script:DEFAULT_PIN } | Should -Be 8
+        }
+    }
 }
