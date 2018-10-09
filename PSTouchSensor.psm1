@@ -1,3 +1,5 @@
+$Script:DEFAULT_PIN = 7
+
 <#
 .SYNOPSIS
 Gets the value of the Touch Sensor
@@ -6,7 +8,7 @@ Gets the value of the Touch Sensor
 Gets the value of the Touch Sensor
 
 .PARAMETER Pin
-The Gpio pin to read from
+The GPIO pin to read from
 
 .EXAMPLE
 Get-PSTouchSensorValue
@@ -17,7 +19,7 @@ You must be running PowerShell with Sudo
 function Get-PSTouchSensor {
     [CmdletBinding()]
     param(
-        [int]$Pin = 7
+        [int]$Pin = $Script:DEFAULT_PIN
     )
 
     if (!$env:SUDO_UID) {
