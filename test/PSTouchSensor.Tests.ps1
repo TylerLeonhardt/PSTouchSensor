@@ -1,6 +1,6 @@
 Import-Module "$PSScriptRoot\..\PSTouchSensor.psd1" -Force
 
-$IsRaspberryPi = (uname -a) -contains 'raspberry'
+$IsRaspberryPi = (uname -a).Contains('raspberry')
 
 Describe 'PSTouchSensor' {
     Context "Get-PSTouchSensor" {
