@@ -6,9 +6,19 @@ Describe 'PSTouchSensor' {
     Context "Get-PSTouchSensor" {
         # This test will only pass if something is touching the sensor
         It 'Can get the value of the TouchSensor' -Skip:$(!$IsRaspberryPi) {
-            (Get-PSTouchSensor).Result
-            Get-GpioPin -Id 7
             (Get-PSTouchSensor).Result | Should -BeTrue
+        }
+    }
+
+    Context 'Set-PSTouchSensorDefaultPin' {
+        It 'Can set the value of the default pin used' {
+
+            $m = Get-Module PSTouchSensor
+
+            # Get internal value of the DEFAULT_PIN
+            & $m { $script:DEFAULT_PIN } | Should -Be 7
+            Set-PSTouchSensorDefaultPin -Pin 8
+            & $m { $script:DEFAULT_PIN } | Should -Be 8
         }
     }
 }
