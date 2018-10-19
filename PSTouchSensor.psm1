@@ -30,3 +30,26 @@ function Get-PSTouchSensor {
         Value = (Get-GpioPin -Id $pinId).Value -eq 'High'
     }
 }
+
+<#
+.SYNOPSIS
+Sets the default GPIO pin on the Raspberry Pi used to read from
+
+.DESCRIPTION
+Sets the default GPIO pin on the Raspberry Pi used to read from
+
+.PARAMETER Pin
+The Gpio pin to read from
+
+.EXAMPLE
+Set-PSTouchSensorDefaultPin -Pin 8
+
+#>
+function Set-PSTouchSensorDefaultPin {
+    [CmdletBinding()]
+    param (
+        [int]$Pin = 7
+    )
+
+    $Script:DEFAULT_PIN = $Pin
+}
