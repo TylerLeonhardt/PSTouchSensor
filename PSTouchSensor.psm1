@@ -27,6 +27,6 @@ function Get-PSTouchSensor {
     }
 
     @{
-        Value = (Get-GpioPin -Id $pinId).Value -eq 'High'
+        Result = (Get-GpioPin -Id $pinId).Value -eq 'High'
     }
 }

@@ -6,7 +6,7 @@ Describe 'PSTouchSensor' {
     Context "Get-PSTouchSensor" {
         # This test will only pass if something is touching the sensor
         It 'Can get the value of the TouchSensor' -Skip:$(!$IsRaspberryPi) {
-            (Get-PSTouchSensor).Value | Should -BeTrue
+            (Get-PSTouchSensor).Result | Should -BeTrue
         }
     }
 }
